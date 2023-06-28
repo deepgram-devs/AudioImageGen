@@ -33,7 +33,7 @@ def audio_summarizer(url):
     }
 
     response = requests.post("https://api.beta.deepgram.com/v1/listen", json=payload, headers=headers, params= params)
-    # print(response.text)
+    print(response.text)
     summary = response.json()['results']['summary']['short']
     return summary
 
@@ -52,5 +52,6 @@ def dall_e_api(url):
     image_link = prompt_image_generator(visual_keywords)
     return image_link
 
-print(dall_e_api("https://www.wavsource.com/snds_2020-10-01_3728627494378403/people/famous/eastwood_lawyers.wav"))
+# print(dall_e_api("https://www.wavsource.com/snds_2020-10-01_3728627494378403/people/famous/eastwood_lawyers.wav"))
+print(dall_e_api("https://res.cloudinary.com/deepgram/video/upload/v1680127025/dg-audio/nasa-spacewalk-interview_ljjahn.wav"))
 
